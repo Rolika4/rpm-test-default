@@ -38,7 +38,7 @@ rpm-publish:
 		${NEXUS_HOST_URL}/repository/edp-yum-snapshots/$(ARCH)/os/Packages/
 
 rpm-set-version:
-	echo $(VERSION) > /tekton/results/VERSION
+	printf "%s" "$(VERSION)" > "$(results.VERSION.path)"
 
 clean:
 	rm -rf ${DIST_DIR}
